@@ -24,31 +24,31 @@ static const struct sCC1101 gCC1101Settings = {
 	0x04,               // Packet automation control (Whitening on: 0x4-, CRC_EN: 0x-4)
 	0x00,               // Device address
 	LOW_CHANNEL,        // Channel number
-	0x06,               // Frequency synthesizer control (for 500k: 0x0E)
+	0x0E,               // Frequency synthesizer control (for 500k: 0x0E) (for 25k: 0x06)
 	0x00,               // Frequency synthesizer control
 	0x22,               // Frequency control word, high byte
 	0xB1,               // Frequency control word, middle byte
 	0x3B,               // Frequency control word, low byte
-	0x99,               // Modem configuration 4 (500k: 0x0E, 25k: 0xC9, increased to 162kHz BW with 0x99)
-	0xF8,               // Modem configuration 3 (500k: 0x3B, 25k: 0xF8)
-	0x01,               // Modem configuration 2 (15/16 sync word bits: 0x-1, for 500k: 0x71, GFSK with 0x11)
-	0xA2,               // Modem configuration 1 (0x22 for no FEC, for 500k: 0xA3)
-	0xF8,               // Modem configuration 0 (for 500k: 0x48)
-	0x35,               // Modem deviation setting (when FSK modulation is enabled) (for 500k: 0x00)
+	0x0E,               // Modem configuration 4 (500k: 0x0E, 25k: 0xC9, increased to 162kHz BW with 0x99)
+	0x3B,               // Modem configuration 3 (500k: 0x3B, 25k: 0xF8)
+	0x71,               // Modem configuration 2 (15/16 sync word bits: 0x-1, for 500k: 0x71, GFSK with 0x11)
+	0xA3,               // Modem configuration 1 (0x22 for no FEC, for 500k: 0xA3) (USED A2)
+	0x48,               // Modem configuration 0 (for 500k: 0x48) (NORMAL F8)
+	0x00,               // Modem deviation setting (when FSK modulation is enabled) (for 500k: 0x00) (NORMAL 35)
 	0x07,               // Main Radio Control State Machine configuration
 	0x0C,               // Main Radio Control State Machine configuration (was 0x0E - stay in RX or TX)
 	0x18,               // Main Radio Control State Machine configuration (perhaps needs to be changed)
-	0x16,               // Frequency Offset Compensation Configuration (for 500k: 0x1D)
-	0x6C,               // Bit synchronization Configuration (for 500k: 0x1C)
-	0x43,               // AGC control (for 500k: 0xC7, also has been 0x07)
-	0x40,               // AGC control (for 500k: 0x00)
-	0x91,               // AGC control (for 500k: 0xB0)
+	0x1D,               // Frequency Offset Compensation Configuration (for 500k: 0x1D) (NORMAL 16)
+	0x1C,               // Bit synchronization Configuration (for 500k: 0x1C) (NORMAL 6C)
+	0xC7,               // AGC control (for 500k: 0xC7, also has been 0x07) (NORMAL 43)
+	0x00,               // AGC control (for 500k: 0x00) (NORMAL 40)
+	0xB0,               // AGC control (for 500k: 0xB0) (NORMAL 91)
 	0x87,               // High byte Event 0 timeout
 	0x6B,               // Low byte Event 0 timeout
 	0xF8,               // Wake On Radio control
-	0x56,               // Front end RX configuration (for 500k: 0xB6)
+	0xB6,               // Front end RX configuration (for 500k: 0xB6) (NORMAL 56)
 	0x10,               // Front end TX configuration
-	0xE9,               // Frequency synthesizer calibration (for 500k: 0xEA, see note in user guide about fast frequency hopping)
+	0xEA,               // Frequency synthesizer calibration (for 500k: 0xEA, see note in user guide about fast frequency hopping) (NORMAL E9)
 	0x2A,               // Frequency synthesizer calibration
 	0x00,               // Frequency synthesizer calibration
 	0x1F,               // Frequency synthesizer calibration
@@ -57,8 +57,8 @@ static const struct sCC1101 gCC1101Settings = {
 	0x59,               // Frequency synthesizer calibration control
 	0x7F,               // Production test
 	0x3F,               // AGC test (was 0x3C)
-	0x81,               // Various test settings (for 500k: 0x88)
-	0x35,               // Various test settings (for 500k: 0x31)
+	0x88,               // Various test settings (for 500k: 0x88) (NORMAL 81)
+	0x31,               // Various test settings (for 500k: 0x31) (NORMAL 35)
 	0x09                // Various test settings
 };
 struct sCC1101PhyInfo gPhyInfo;
