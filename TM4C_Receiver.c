@@ -20,8 +20,8 @@ static const struct sCC1101 gCC1101Settings = {
 	0xD3,               // Sync word, high byte
 	0x91,               // Sync word, low byte
 	PACKET_LEN,			// Packet length
-	0x48,               // Packet automation control (PQT set to 2: 0x4-, Append status: 0x-4, CRC: 0x-8)
-	0x04,               // Packet automation control (Whitening on: 0x4-, CRC_EN: 0x-4)
+	0x40,               // Packet automation control (PQT set to 2: 0x4-, Append status: 0x-4, CRC: 0x-8)
+	0x40,               // Packet automation control (Whitening on: 0x4-, CRC_EN: 0x-4)
 	0x00,               // Device address
 	LOW_CHANNEL,        // Channel number
 	0x0E,               // Frequency synthesizer control (for 500k: 0x0E) (for 25k: 0x06)
@@ -31,7 +31,7 @@ static const struct sCC1101 gCC1101Settings = {
 	0x3B,               // Frequency control word, low byte
 	0x0E,               // Modem configuration 4 (500k: 0x0E, 25k: 0xC9, increased to 162kHz BW with 0x99)
 	0x3B,               // Modem configuration 3 (500k: 0x3B, 25k: 0xF8)
-	0x71,               // Modem configuration 2 (15/16 sync word bits: 0x-1, for 500k: 0x71, GFSK with 0x11)
+	0x03,               // Modem configuration 2 (15/16 sync word bits: 0x-1, for 500k: 0x71, GFSK with 0x11)
 	0xA3,               // Modem configuration 1 (0x22 for no FEC, for 500k: 0xA3) (USED A2)
 	0x48,               // Modem configuration 0 (for 500k: 0x48) (NORMAL F8)
 	0x00,               // Modem deviation setting (when FSK modulation is enabled) (for 500k: 0x00) (NORMAL 35)
